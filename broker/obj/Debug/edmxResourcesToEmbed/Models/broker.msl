@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="brokerModelStoreContainer" CdmEntityContainer="brokerEntities3">
+    <EntitySetMapping Name="brokerrs">
+      <EntityTypeMapping TypeName="brokerModel.brokerr">
+        <MappingFragment StoreEntitySet="brokerr">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="addr" ColumnName="addr" />
+          <ScalarProperty Name="mob" ColumnName="mob" />
+          <ScalarProperty Name="psw" ColumnName="psw" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customers">
+      <EntityTypeMapping TypeName="brokerModel.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="psw" ColumnName="psw" />
+          <ScalarProperty Name="mob" ColumnName="mob" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="broker_id" ColumnName="broker_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pointsses">
+      <EntityTypeMapping TypeName="brokerModel.pointss">
+        <MappingFragment StoreEntitySet="pointss">
+          <ScalarProperty Name="cus_id" ColumnName="cus_id" />
+          <ScalarProperty Name="datee" ColumnName="datee" />
+          <ScalarProperty Name="points" ColumnName="points" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

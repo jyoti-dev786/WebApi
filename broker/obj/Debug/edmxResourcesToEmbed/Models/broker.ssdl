@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="brokerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="brokerr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar(max)" />
+    <Property Name="city" Type="varchar(max)" />
+    <Property Name="addr" Type="varchar(max)" />
+    <Property Name="mob" Type="varchar(max)" />
+    <Property Name="psw" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="broker_id" Type="varchar(max)" />
+    <Property Name="name" Type="varchar(max)" />
+    <Property Name="mob" Type="varchar(max)" />
+    <Property Name="psw" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="pointss">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="points" Type="varchar(max)" />
+    <Property Name="datee" Type="varchar(max)" />
+    <Property Name="cus_id" Type="varchar(max)" />
+  </EntityType>
+  <EntityContainer Name="brokerModelStoreContainer">
+    <EntitySet Name="brokerr" EntityType="Self.brokerr" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pointss" EntityType="Self.pointss" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

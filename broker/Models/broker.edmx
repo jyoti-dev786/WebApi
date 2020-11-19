@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="brokerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="brokerr">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar(max)" />
+          <Property Name="city" Type="varchar(max)" />
+          <Property Name="addr" Type="varchar(max)" />
+          <Property Name="mob" Type="varchar(max)" />
+          <Property Name="psw" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="broker_id" Type="varchar(max)" />
+          <Property Name="name" Type="varchar(max)" />
+          <Property Name="mob" Type="varchar(max)" />
+          <Property Name="psw" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="pointss">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="points" Type="varchar(max)" />
+          <Property Name="datee" Type="varchar(max)" />
+          <Property Name="cus_id" Type="varchar(max)" />
+        </EntityType>
+        <EntityContainer Name="brokerModelStoreContainer">
+          <EntitySet Name="brokerr" EntityType="Self.brokerr" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pointss" EntityType="Self.pointss" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="brokerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="brokerr">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="city" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="addr" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mob" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="psw" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="brokerEntities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="brokerrs" EntityType="Self.brokerr" />
+          <EntitySet Name="customers" EntityType="brokerModel.customer" />
+          <EntitySet Name="pointsses" EntityType="brokerModel.pointss" />
+        </EntityContainer>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="broker_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mob" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="psw" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="pointss">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="points" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="datee" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cus_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="brokerModelStoreContainer" CdmEntityContainer="brokerEntities3">
+          <EntitySetMapping Name="brokerrs">
+            <EntityTypeMapping TypeName="brokerModel.brokerr">
+              <MappingFragment StoreEntitySet="brokerr">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="addr" ColumnName="addr" />
+                <ScalarProperty Name="mob" ColumnName="mob" />
+                <ScalarProperty Name="psw" ColumnName="psw" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customers">
+            <EntityTypeMapping TypeName="brokerModel.customer">
+              <MappingFragment StoreEntitySet="customer">
+                <ScalarProperty Name="psw" ColumnName="psw" />
+                <ScalarProperty Name="mob" ColumnName="mob" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="broker_id" ColumnName="broker_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pointsses">
+            <EntityTypeMapping TypeName="brokerModel.pointss">
+              <MappingFragment StoreEntitySet="pointss">
+                <ScalarProperty Name="cus_id" ColumnName="cus_id" />
+                <ScalarProperty Name="datee" ColumnName="datee" />
+                <ScalarProperty Name="points" ColumnName="points" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

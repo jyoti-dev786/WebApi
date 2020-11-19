@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="brokerModel1StoreContainer" CdmEntityContainer="brokerEntities1">
+    <EntitySetMapping Name="customerRegs">
+      <EntityTypeMapping TypeName="brokerModel1.customerReg">
+        <MappingFragment StoreEntitySet="customerReg">
+          <ScalarProperty Name="idBroker" ColumnName="idBroker" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="mob" ColumnName="mob" />
+          <ScalarProperty Name="psw" ColumnName="psw" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="brokerModel2StoreContainer" CdmEntityContainer="brokerEntities2">
+    <EntitySetMapping Name="points">
+      <EntityTypeMapping TypeName="brokerModel2.point">
+        <MappingFragment StoreEntitySet="points">
+          <ScalarProperty Name="idCus" ColumnName="idCus" />
+          <ScalarProperty Name="points" ColumnName="points" />
+          <ScalarProperty Name="datee" ColumnName="datee" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
